@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>FlexMaster - Flexbox Challenge Game</title>
+
+  <!-- CodeMirror CSS -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.13/codemirror.min.css"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.13/theme/dracula.min.css"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.13/addon/hint/show-hint.min.css"
+  />
+
+  <!-- Our styles -->
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <h1>FlexMaster</h1>
+    <button id="theme-toggle" title="Toggle dark/light theme">🌙</button>
+  </header>
+
+  <main>
+    <section class="instructions">
+      <h2 id="level-title">Loading Level...</h2>
+      <p id="level-tracker"></p>
+      <p id="score">Score: 0</p>
+    </section>
+
+    <section class="layouts">
+      <div class="layout-container">
+        <h3>Target Layout</h3>
+        <div id="target-layout" class="flex-container">
+          <div class="box">1</div>
+          <div class="box">2</div>
+          <div class="box">3</div>
+        </div>
+      </div>
+
+      <div class="layout-container">
+        <h3>Your Layout</h3>
+        <div id="user-layout" class="flex-container">
+          <div class="box">1</div>
+          <div class="box">2</div>
+          <div class="box">3</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="css-editor-section">
+      <h3>Write your CSS here:</h3>
+      <textarea id="css-input"></textarea>
+      <div class="buttons">
+        <button id="apply-btn">Apply CSS</button>
+        <button id="check-btn">Check Answer</button>
+        <button id="reset-btn">Reset Progress</button>
+      </div>
+    </section>
+  </main>
+
+  <div id="confetti-wrapper"></div>
+
+  <!-- Sounds -->
+  <audio id="win-sound" src="https://assets.codepen.io/3/success.mp3" preload="auto"></audio>
+  <audio id="fail-sound" src="https://assets.codepen.io/3/fail.mp3" preload="auto"></audio>
+
+  <!-- CodeMirror JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.13/codemirror.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.13/mode/css/css.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.13/addon/hint/show-hint.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.13/addon/hint/css-hint.min.js"></script>
+
+  <!-- Our script -->
+  <script src="script.js"></script>
+</body>
+</html>

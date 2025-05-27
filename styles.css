@@ -1,0 +1,257 @@
+/* Reset & base */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, #89f7fe 0%, #66a6ff 100%);
+  color: #222;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+header h1 {
+  font-weight: 700;
+  font-size: 1.8rem;
+  color: #222;
+}
+
+header button {
+  font-size: 1.5rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+header button:hover {
+  transform: rotate(20deg);
+}
+
+main {
+  flex-grow: 1;
+  padding: 1rem 2rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* Instructions */
+.instructions {
+  text-align: center;
+}
+.instructions h2 {
+  font-size: 1.6rem;
+  margin-bottom: 0.3rem;
+}
+.instructions p {
+  font-weight: 600;
+  margin-bottom: 0.2rem;
+}
+
+/* Layout containers */
+.layouts {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.layout-container {
+  background: rgba(255, 255, 255, 0.9);
+  padding: 1rem;
+  border-radius: 10px;
+  flex: 1 1 350px;
+  max-width: 450px;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.layout-container h3 {
+  margin-bottom: 1rem;
+  font-weight: 700;
+  color: black;
+}
+
+/* Flex container target & user */
+.flex-container {
+  border: 3px dashed #bbb;
+  min-height: 150px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: stretch;
+  background-color: #f7f9fc;
+  border-radius: 8px;
+  padding: 1rem;
+  gap: 10px;
+}
+
+/* Boxes */
+.box {
+  background: #409cff;
+  color: white;
+  font-weight: 700;
+  font-size: 1.5rem;
+  border-radius: 6px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 0 0 60px;
+  height: 60px;
+  user-select: none;
+  transition: background-color 0.3s ease;
+}
+.box:hover {
+  background: #0066ff;
+  cursor: default;
+}
+
+/* CSS editor */
+.css-editor-section {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 1rem;
+  border-radius: 10px;
+  max-width: 900px;
+  margin: 0 auto;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+#css-input {
+  height: 200px;
+  border: 2px solid #409cff;
+  border-radius: 6px;
+  font-family: 'Source Code Pro', monospace;
+  font-size: 1rem;
+  outline: none;
+  resize: vertical;
+}
+
+/* Buttons */
+.buttons {
+  margin-top: 0.8rem;
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+button {
+  background-color: #409cff;
+  border: none;
+  padding: 0.6rem 1.5rem;
+  border-radius: 6px;
+  color: white;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+button:hover {
+  background-color: #0066ff;
+}
+
+/* Confetti */
+#confetti-wrapper {
+  position: fixed;
+  pointer-events: none;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: visible;
+  z-index: 1000;
+}
+
+.confetti {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background-color: red;
+  opacity: 0.7;
+  animation-name: confetti-fall;
+  animation-timing-function: ease-in;
+  animation-fill-mode: forwards;
+}
+
+@keyframes confetti-fall {
+  0% {
+    opacity: 1;
+    transform: translateY(0) rotate(0deg);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(600px) rotate(360deg);
+  }
+}
+
+/* Dark theme */
+.dark-theme {
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  color: #eee;
+}
+
+.dark-theme header {
+  background-color: rgba(30, 30, 30, 0.9);
+  color: #eee;
+}
+
+.dark-theme .layout-container {
+  background: rgba(50, 50, 50, 0.9);
+  color: #eee;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.5);
+}
+.dark-theme .layout-container h3{
+  color: white;
+}
+.dark-theme .css-editor-section h3{
+  color: black;
+}
+.dark-theme .flex-container {
+  background-color: #1a1a1a;
+  border-color: #555;
+}
+
+.dark-theme .box {
+  background: #3a9cff;
+}
+
+.dark-theme .box:hover {
+  background: #2a7ccc;
+}
+
+.dark-theme button {
+  background-color: #3a9cff;
+  color: white;
+}
+.dark-theme h1{
+  color:white
+}
+.dark-theme button:hover {
+  background-color: #1a62cc;
+}
+
+/* Responsive */
+@media (max-width: 850px) {
+  .layouts {
+    flex-direction: column;
+  }
+  .layout-container {
+    max-width: 100%;
+  }
+  
+  
+}
